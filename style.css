@@ -403,27 +403,30 @@ span{
 .services{
     background: var(--bg-color);
     color: black;
+    padding: 5rem 2rem;
 }
 
 .services h2{
     margin-bottom: 5rem;
     color: white;
+    text-align: center;
 }
 
 .services-container{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    align-items: center;
+    align-items: stretch;
     gap: 2.5rem;
 }
 
 .service-box{
     background-color: var(--main-color);
-    height: 300px;
     border-radius: 3rem;
     border: 5px solid transparent;
     cursor: pointer;
     transition: 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
 }
 
 .service-box:hover{
@@ -437,24 +440,21 @@ span{
     display: flex;
     flex-direction: column;
     text-align: left;
-    max-height: 200px;
-    justify-content: left;
-    align-items: baseline;
-    padding: 5rem 5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2rem;
 }
 
 .service-info h4{
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 800;
-    line-height: 2;
+    margin-bottom: 1rem;
 }
 
 .service-info p{
-    font-size: 1.6rem;
-    font-weight: 600;
-    max-height: 100px;
-    line-height: 1.7;
-    margin: auto;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
 }
 
 .testimonials{
@@ -635,11 +635,11 @@ span{
     html{
         font-size: 55%;
     }
-    .services-container{
+    /* .services-container{
         padding-bottom: 7rem;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: 1fr;
         margin: 0 5rem;
-    }
+    } */
 }
 
 @media(max-width:991px){
@@ -663,9 +663,9 @@ span{
     .timeline-dot{
         left: 0;
     }
-    .services{
+    /* .services{
         padding-bottom: 7rem;
-    }
+    } */
     .testimonials .wrapper{
         grid-template-columns: repeat(1,1fr);
     }
@@ -721,10 +721,28 @@ span{
     .home-img img{
         width: 56vw;
     }
-    .services h2{
+    /* .services h2{
         margin-bottom: 3rem;
     }
     .services-container{
         grid-template-columns: repeat(1,1fr);
+    } */
+}
+
+@media (max-width: 768px){
+    .services-container{
+        grid-template-columns: 1fr; /* stack boxes vertically */
+    }
+
+    .service-box .service-info{
+        padding: 1.5rem; /* smaller padding for mobile */
+    }
+
+    .service-info h4{
+        font-size: 1.5rem;
+    }
+
+    .service-info p{
+        font-size: 0.95rem;
     }
 }
